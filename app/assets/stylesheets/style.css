@@ -55,6 +55,7 @@ html {
   color: white;
   border-radius: 5px;
   transition: all 0.3 ease-out;
+  text-decoration: none;
 }
 
 .signup:hover {
