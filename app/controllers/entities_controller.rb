@@ -8,11 +8,11 @@ class EntitiesController < ApplicationController
   def create
     @entity = Entity.new(entity_params)
     @entity.author = current_user
-  
+
     if @entity.save
       # If save is successful, associate groups with the entity
       @entity.groups << Group.find(params[:entity][:group_ids]) if params[:entity][:group_ids].present?
-  
+
       flash[:success] = 'Entity created successfully'
       redirect_to entities_path
     else
