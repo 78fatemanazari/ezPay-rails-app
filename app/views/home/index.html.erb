@@ -1,5 +1,9 @@
 <section class='welcome'>
-  <h1>Expense App</h1>
+  <p>Welcome to</p>
+  <h1>iPay</h1>
   <%= button_to 'Log in', new_user_session_path, :class=>'signIn' %>
-  <%= link_to 'Sign Up', new_user_registration_path, :class=>'signUp' %>
+  <div>
+    <p>Did not have a account ?</p>
+    <%= link_to 'Sign Up', new_user_registration_path, :class=>'signUp' %>
+  </div>
 </section>
