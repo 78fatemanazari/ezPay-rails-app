@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li><%= link_to '<', user_group_path(@user, @group), :class=>'navBtn' %></li>
+    <li><p>TRANSACTION</p></li>
+    <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
+  </ul>
+</nav>
+<section class='addTransaction'>
+  <h2>Add a new Transaction</h2>
+  <%= form_with model: @entity, url: user_group_entities_path(@user, @group), :class=>'forms', method: :post do |form| %>
+    <%= form.label :name, 'Name:' %>
+    <%= form.text_field :name, :class => 'texts' %>
+    <%= form.label :amount, 'Amount:' %>
+    <%= form.text_field :amount, :class => 'texts' %>
+    <%= form.label :group_id, 'Category:' %>
+    <%= form.collection_select :group_id, @user.groups, :id, :name %>
+    <div class='btnDiv'>
+      <%= form.submit 'Create Transaction', :class => 'btn' %>
+    </div>
+  <% end %>
+</section>
