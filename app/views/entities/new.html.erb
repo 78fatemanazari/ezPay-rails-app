@@ -5,7 +5,7 @@
     <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
   </ul>
 </nav>
-<section class='addTransaction'>
+<section class='add-entity-container'>
   <h2>Add a new Transaction</h2>
   <%= form_with model: @entity, url: user_group_entities_path(@user, @group), :class=>'forms', method: :post do |form| %>
     <%= form.label :name, 'Name:' %>

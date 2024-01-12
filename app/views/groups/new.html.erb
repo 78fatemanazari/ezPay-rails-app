@@ -1,11 +1,11 @@
 <nav>
   <ul>
     <li><%= link_to '<', user_groups_path(@user), :class=>'navBtn' %></li>
-    <li><p>CATEGORY</p></li>
+    <li><p>Category</p></li>
     <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
   </ul>
 </nav>
-<section class='addCategory'>
+<section class='add-category-container'>
   <h2>Add a New Category</h2>
   <%= form_with model: @group, url: user_groups_path(@user), :class=>'forms', method: :post do |form| %>
     <%= form.label :name, 'Name:' %>

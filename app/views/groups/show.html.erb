@@ -2,17 +2,17 @@
   <nav>
     <ul>
       <li><%= link_to '<', user_groups_path(@user), :class=>'navBtn' %></li>
-      <li><p>TRANSACTIONS</p></li>
+      <li><p>Transaction</p></li>
       <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
     </ul>
   </nav>
-  <section class='cards'>
-    <div class='category'>
+  <section class='group-cards'>
+    <div class='group-card'>
       <div>
         <img src=<%= @group.icon %> alt=<%= @group.name %> class='icons'>
       </div>
-      <div class='categoryInfo'>
-        <h2><%= @group.name %></h2>
+      <div class='groupinfo'>
+        <h2 class="group-name"><%= @group.name %></h2>
         <p>
           Total Amount: $ 
           <% sum = 0 %>
