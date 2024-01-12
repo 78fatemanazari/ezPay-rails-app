@@ -72,5 +72,3 @@ end
 gem 'pg'
 
 gem 'devise', '~> 4.9'
-
-
