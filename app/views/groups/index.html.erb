@@ -1,0 +1,27 @@
+<section class='categories'>
+  <nav>
+    <ul>
+      <li><%= link_to '#', user_path(@user), :class=>'navBtn' %></li>
+      <li><p>CATEGORIES</p></li>
+      <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
+    </ul>
+  </nav>
+  <section class='cards'>
+    <% @groups.each do |group| %>
+      <a href=<%= user_group_path(@user, group) %> class='categoryLink'>
+        <div class='category'>
+          <div>
+            <img src=<%= group.icon %> alt=<%= group.name %> class='icons'>
+          </div>
+          <div class='categoryInfo'>
+            <h2><%= group.name %></h2>
+            <p>Transactions: <%= group.entities.count %></p>
+          </div>    
+        </div>
+      </a>
+    <% end %>
+  </section>
+  <div class='bottom'>
+    <%= link_to 'Add Category', new_user_group_path(@user), :class=>'linkBtn' %>
+  </div>
+</section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_10_195012) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_11_083845) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,11 +18,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_195012) do
     t.string "name"
     t.decimal "amount"
     t.bigint "author_id"
-    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_entities_on_author_id"
-    t.index ["group_id"], name: "index_entities_on_group_id"
+  end
+
+  create_table "entities_groups", id: false, force: :cascade do |t|
+    t.bigint "entity_id", null: false
+    t.bigint "group_id", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -42,11 +45,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_195012) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "groups"
   add_foreign_key "entities", "users", column: "author_id"
   add_foreign_key "groups", "users", column: "author_id"
 end

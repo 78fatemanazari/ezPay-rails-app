@@ -1,0 +1,38 @@
+<section class='transactions'>
+  <nav>
+    <ul>
+      <li><%= link_to '<', user_groups_path(@user), :class=>'navBtn' %></li>
+      <li><p>TRANSACTIONS</p></li>
+      <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
+    </ul>
+  </nav>
+  <section class='cards'>
+    <div class='category'>
+      <div>
+        <img src=<%= @group.icon %> alt=<%= @group.name %> class='icons'>
+      </div>
+      <div class='categoryInfo'>
+        <h2><%= @group.name %></h2>
+        <p>
+          Total Amount: $ 
+          <% sum = 0 %>
+          <% @entities.each do |entity| %>
+          <% sum += entity.amount %>
+          <% end %>
+          <%= sum %>
+        </p>
+        <p><%= @group.created_at %></p>
+      </div>   
+    </div>
+    <% @entities.each do |entity| %>
+      <div class='transaction'>
+        <h3><%= entity.name %></h3>
+        <p>Amount: <%= entity.amount %></p>
+        <p><%= entity.created_at %></p>
+      </div>
+    <% end %>
+  </section>
+  <div class='bottom'>
+    <%= link_to 'Add Transaction', new_user_group_entity_path(@user, @group), :class=>'linkBtn' %>
+  </div>
+</section>

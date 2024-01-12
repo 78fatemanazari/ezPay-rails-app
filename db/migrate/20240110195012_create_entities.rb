@@ -4,7 +4,6 @@ class CreateEntities < ActiveRecord::Migration[7.1]
       t.string :name
       t.decimal :amount
       t.references :author, foreign_key: { to_table: :users }
-      t.references :group, foreign_key: { to_table: :groups }
 
       t.timestamps
     end

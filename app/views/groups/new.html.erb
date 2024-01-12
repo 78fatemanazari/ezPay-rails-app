@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <li><%= link_to '<', user_groups_path(@user), :class=>'navBtn' %></li>
+    <li><p>CATEGORY</p></li>
+    <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
+  </ul>
+</nav>
+<section class='addCategory'>
+  <h2>Add a New Category</h2>
+  <%= form_with model: @group, url: user_groups_path(@user), :class=>'forms', method: :post do |form| %>
+    <%= form.label :name, 'Name:' %>
+    <%= form.text_field :name, :class => 'texts' %>
+    <%= form.label :icon, 'Icon:' %>
+    <%= form.text_field :icon, :class => 'texts' %>
+    <div class='btnDiv'>
+      <%= form.submit 'Create Category', :class => 'btn' %>
+    </div>
+  <% end %>
+</section>

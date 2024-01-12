@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li><%= link_to '<', user_groups_path(@user), :class=>'navBtn' %></li>
+    <li><p>ACCOUNT</p></li>
+    <li><%= button_to '|->', destroy_user_session_path, :class=>'logout', method: :delete %></li>
+  </ul>
+</nav>
+<section class='userDetails'>
+  <h4>Welcome Back!</h4>
+  <h2><%= @user.name %></h2>
+  <br>
+  <p>Beware of little expenses.</p>
+  <p>A small leak will sink a great ship.</p>
+  <br>
+  <p>Thank you for using our app.</p>
+</section>
