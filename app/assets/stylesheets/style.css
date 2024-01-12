@@ -63,3 +63,162 @@ html {
   color: #434b54;
   border: solid 1px #434b54;
 }
+
+.registration-container{
+  font-size: 1.2rem;
+  min-height: 100vh;
+  background-color: #3778c2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texts {
+  margin: 0.4rem 0 0.6rem 0;
+  padding: 10px 35px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 0.1rem #5fb523;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #5fb523;
+  color: white;
+  padding: 10px 35px;
+  margin: 0.8rem 0;
+  border: solid 0.1rem white;
+  transition: all 0.3s ease-out;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: white;
+  border: solid 0.1rem #5fb523;
+  color: #5fb523;
+}
+
+.loginlink{
+  color: #5fb523;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover {
+  text-decoration: underline;
+}
+
+.groups_container,
+.transactions {
+  background-color: whitesmoke;
+  min-height: 100vh;
+  color: white;
+}
+
+nav {
+  box-shadow: 0 0 0.3rem lightgrey;
+}
+
+nav ul {
+  color: white;
+  background-color: #3778c2;
+  list-style: none;
+  font-size: 1.3rem;
+  width: 100%;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBtn {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.logout {
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  background-color: #3778c2;
+}
+
+.groups {
+  padding: 5% 5% 25% 5%;
+  color: grey;
+}
+
+.groupLink {
+  text-decoration: none;
+  color: grey;
+}
+
+
+.group {
+  background-color: white;
+  display: flex;
+  gap: 4%;
+  padding: 1% 2%;
+  margin-bottom: 4%;
+  box-shadow: 0 0 0.3rem lightgrey;
+  transition: background-color 1s ease-out;
+}
+
+.group:hover {
+  background-color: #5fb523;
+  color: white;
+}
+
+.icons {
+  max-width: 5rem;
+}
+
+.groupinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add_btn {
+  background-color: #5fb523;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.add_link_btn {
+  text-decoration: none;
+  text-align: center;
+  border: solid 0.15rem white;
+  border-radius: 0.2rem;
+  padding: 0.6rem;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.add_link_btn:hover {
+  background-color: white;
+  color: #5fb523;
+  border-color: #5fb523;
+}

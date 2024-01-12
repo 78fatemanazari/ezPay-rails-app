@@ -1,4 +1,4 @@
-<section class='categories'>
+<section class='groups_container'>
   <nav>
     <ul>
       <li><%= link_to '#', user_path(@user), :class=>'navBtn' %></li>
@@ -6,14 +6,14 @@
       <li><%= button_to '[>', destroy_user_session_path, :class=>'logout', method: :delete %></li>
     </ul>
   </nav>
-  <section class='cards'>
+  <section class='groups'>
     <% @groups.each do |group| %>
-      <a href=<%= user_group_path(@user, group) %> class='categoryLink'>
-        <div class='category'>
+      <a href=<%= user_group_path(@user, group) %> class='grouplink'>
+        <div class='group'>
           <div>
             <img src=<%= group.icon %> alt=<%= group.name %> class='icons'>
           </div>
-          <div class='categoryInfo'>
+          <div class='groupinfo'>
             <h2><%= group.name %></h2>
             <p>Transactions: <%= group.entities.count %></p>
           </div>    
@@ -21,7 +21,7 @@
       </a>
     <% end %>
   </section>
-  <div class='bottom'>
-    <%= link_to 'Add Category', new_user_group_path(@user), :class=>'linkBtn' %>
+  <div class='add_btn'>
+    <%= link_to 'Add Category', new_user_group_path(@user), :class=>'add_link_btn' %>
   </div>
 </section>
