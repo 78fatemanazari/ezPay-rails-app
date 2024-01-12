@@ -83,13 +83,14 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-  [Live Demo Link]()
+  [Live Demo Link](https://78fatemanazari.github.io/ezPay-rails-app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 ## Video Demo 
 
   [Video Demo Link](https://www.loom.com/share/006fbc33b37641ca8d644e1d50b54bd4?sid=8d857dfb-ca7f-4643-9e45-0ccd8f1e9480)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
