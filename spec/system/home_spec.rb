@@ -49,6 +49,4 @@ RSpec.describe 'Welcome page', type: :system do
     click_button 'Log in'
     expect(page).to have_content('Invalid email or password')
   end
-
-  
 end

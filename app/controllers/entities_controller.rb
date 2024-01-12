@@ -10,7 +10,7 @@ class EntitiesController < ApplicationController
     @entity.author = current_user
 
     @user = User.find(params[:user_id])
-  @group = Group.find(params[:group_id])
+    @group = Group.find(params[:group_id])
 
     if @entity.save
       # If save is successful, associate groups with the entity
