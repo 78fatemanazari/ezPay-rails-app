@@ -1,19 +1,22 @@
 databases:
-  - name: ezPay
-    ipAllowList: []
-    databaseName: ezpay_cttk
-    user: ezpay_cttk_user
+ - name: postgres
+   ipAllowList: []
+   databaseName: my-deploy-test
+   user: my-deploy-test
+   plan: free
+
 
 services:
-  - type: web
-    name: budgetApp
-    env: ruby
-    buildCommand: "./render-build.sh"
-    startCommand: "bundle exec rails s"
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: ezPay
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
+ - type: web
+   name: rails
+   env: ruby
+   plan: free
+   buildCommand: "./bin/render-build.sh"
+   startCommand: bundle exec rails s
+   envVars:
+     - key: DATABASE_URL
+       fromDatabase:
+         name: postgres
+         property: connectionString
+     - key: RAILS_MASTER_KEY
+       sync: false
