@@ -1,26 +1,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: postgres
+  password: fatema
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
 
 development:
   <<: *default
   database: ezPay_development
-  username: postgres
-  password: fatema
-  host: localhost
+  
 
 test:
   <<: *default
   database: ezPay_test
-  username: postgres
-  password: fatema
-  host: localhost
+  
 
 production:
   <<: *default
-  database: ezPay_production
-  username: postgres
-  password: fatema
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>
