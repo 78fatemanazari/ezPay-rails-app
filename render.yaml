@@ -1,9 +1,8 @@
 databases:
   - name: ezPay
-    databaseName: ezPay
+    databaseName: ezpay_database
     user: mysite
     plan: free
-
 services:
   - type: web
     name: ezPay
