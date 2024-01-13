@@ -6,6 +6,7 @@ databases:
    plan: free
 
 
+
 services:
  - type: web
    name: rails
