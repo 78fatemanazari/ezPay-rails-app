@@ -1,11 +1,11 @@
 databases:
   - name: ezPay
-    databaseName: ezpay_database
-    user: mysite
+    databaseName: ezpay_cttk
+    user: ezpay_cttk_user
     plan: free
 services:
   - type: web
-    name: ezPay
+    name: budgetApp
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
