@@ -4,6 +4,7 @@ databases:
     databaseName: ezpay_cttk
     user: ezpay_cttk_user
 
+
 services:
   - type: web
     name: budgetApp
