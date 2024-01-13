@@ -1,7 +1,7 @@
 databases:
   - name: ezPay
-    databaseName: ezPay
-    user: mysite
+    databaseName: ezpay_cttk
+    user: ezpay_cttk_user
     plan: free
 
 services:
