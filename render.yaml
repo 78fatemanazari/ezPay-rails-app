@@ -1,17 +1,15 @@
 databases:
   - name: ezPay
+    ipAllowList: []
     databaseName: ezpay_cttk
     user: ezpay_cttk_user
-    plan: free
 
 services:
   - type: web
-    name: ezPay
-    runtime: ruby
-    plan: free
-    buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "./bin/rails server"
+    name: budgetApp
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -19,5 +17,3 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: WEB_CONCURRENCY
-        value: 2 # sensible default
